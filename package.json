@@ -1,0 +1,22 @@
+{
+  "name": "robots",
+  "version": "1.0.0",
+  "description": "3 Fight",
+  "main": "electron-main.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "electron ."
+  },
+  "author": "Al Crowley",
+  "license": "ISC",
+  "dependencies": {
+    "keypress": "^0.2.1",
+    "mocha": "^3.5.0",
+    "terminal-kit": "^1.11.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "electron": "~1.6.2"
+  }
+}

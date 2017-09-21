@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+
+
+
+</head>
+<body onload="">
+<canvas id="canvas" width="500" height="500">
+
+</canvas>
+</body>
+
+<script>
+
+    var {ipcRenderer, remote} = require('electron');
+
+    // Send async message to main process
+    ipcRenderer.send('async', "this is a longer string");
+
+    let {Board} = require('./board.js');
+    var board = new Board(25, 25, ready);
+    console.log (board);
+
+    function ready () {
+        board.draw(window.document.getElementById("canvas"));
+
+        window.document.onkeydown = function (evt) {
+            evt = evt || window.event;
+            console.log(evt);
+            board.tick(evt.key);
+        }
+
+    }
+
+</script>
+</html>
